@@ -8,13 +8,21 @@
 
 ---
 
+##### Fundamentos de Programación en **C++**
+
+* [Fundamentos de Programación](https://github.com/garyDav/programacion)
+
 #### Contenido de la materia
 
 1. **Fundamentos** - [Introducción](./temas/01-FundamentosWeb.md)
 
 #### Clases Grabadas
 
-* [Grabados-Drive](https://drive.google.com/drive/u/2/home)
+* Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)
+
+#### Enlace clases FullStack
+
+* Enlace clases virtuales: [Meet](https://meet.google.com/qcg-qtnv-rwu)
 
 #### Enlaces destacados
 
