@@ -9,14 +9,18 @@
 En JavaScript, las variables pueden guardar cualquier tipo de dato. El tipo se asigna automáticamente según el valor que le pongas.
 
 - Los nombres pueden tener letras, números, `$` y `_`, pero **no pueden empezar con números**.
-- Se declaran con `var`, por ejemplo:
+- Se **declaran** con `var`, `let` o `const`, por ejemplo:
 
 ```js
-var a;
-var b, c, d;
+var a
+var b, c, d
+
+let name, lastName
+
+const FECHA_CINE = '20-08-2025'
 ```
 
-- Luego puedes asignarles valores:
+- Luego puedes **asignarles** valores:
 
 ```js
 a = 4.23;           // número decimal
@@ -25,7 +29,7 @@ c = 125;            // número entero
 d = [1, 2, 3, 4];   // arreglo
 ```
 
-- También puedes declarar y asignar en una sola línea:
+- También puedes **declarar** y **asignar** en una sola línea:
 
 ```js
 var a = 4.23, b = "Javascript", c = 125, d = [1, 2, 3, 4];
