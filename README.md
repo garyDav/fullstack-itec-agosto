@@ -16,6 +16,10 @@
 
 1. **Fundamentos** - [Introducción](./temas/01-FundamentosWeb.md)
 
+2. **Call Stack** - [Introducción](./temas/02-CallStack.md)
+
+3. **Tipos de Datos** - [Introducción](./temas/03-TiposDatosPrimitivos.md)
+
 #### Clases Grabadas
 
 * Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)
