@@ -2,7 +2,7 @@
 
 #### ¿Qué es un tipo de dato primitivo?
 
-Es un tipo de dato básico como números, cadenas de texto, booleanos, `null`, `undefined`, y símbolos. No son objetos y no tienen propiedades ni métodos.
+Es un tipo de dato básico como números, cadenas de texto, booleanos, `null`, `undefined`, y símbolos. Los tipos de datos **Primitivos** no son **objetos** y no tienen **propiedades ni métodos**.
 
 Otra característica que tienen los datos primitivos es que son **inmutables**, lo que significa que no pueden ser cambiados. Si intentas modificar un dato primitivo, en realidad estás creando uno nuevo.
 
@@ -33,7 +33,7 @@ console.log(texto) // 'Bocina'
 
 * `bigint`: Números enteros grandes, como `1234567890123456789012345678901234567890n`, se incorpora desde la versión "ECMAScript 2020".
 
-En JavaScript **todo valor que no sea de alguno de estos tipos es un objeto**, exacto los array son objetos, las funciones son objetos, las fechas, las expresiones regulares y cualquier objeto literal también.
+En JavaScript **todo valor que no sea de alguno de estos tipos es un objeto**, exacto los array son objetos, las funciones son objetos, las funciones tipo fecha también son objetos, las expresiones regulares y cualquier objeto literal también lo es.
 
 #### 🔗 Cadenas
 
@@ -57,7 +57,7 @@ Pero cuidado si utilizamos el método `toString()`, debemos asegurarnos que la v
 
 #### 🔢 Números
 
-Los números en JavaScript son de tipo `number`, y pueden ser enteros o decimales. JavaScript utiliza el estándar IEEE 754 para representar números de punto flotante.
+Los números en JavaScript son de tipo `number`, y pueden ser enteros positivos o negativos y también decimales. JavaScript utiliza el estándar IEEE 754 para representar números de punto flotante.
 
 ```js
 var entero = 42

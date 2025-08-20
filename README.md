@@ -14,11 +14,11 @@
 
 #### Contenido de la materia
 
-1. **Fundamentos** - [Introducción](./temas/01-FundamentosWeb.md)
+1. **Fundamentos - Introducción**: [Enlace](./temas/01-FundamentosWeb.md)
 
-2. **Call Stack** - [Introducción](./temas/02-CallStack.md)
+2. **Call Stack**: [Enlace](./temas/02-CallStack.md)
 
-3. **Tipos de Datos** - [Introducción](./temas/03-TiposDatosPrimitivos.md)
+3. **Tipos de Datos**: [Enlace](./temas/03-TiposDatosPrimitivos.md)
 
 #### Clases Grabadas
 
