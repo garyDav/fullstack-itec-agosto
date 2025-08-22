@@ -2,4 +2,7 @@
 // process.argv[1] es la ruta al script que se está ejecutando
 const args = process.argv.slice(2)
 
-console.log(args)
+let nombre = args[0]
+
+console.log(nombre)
+delete nombre
