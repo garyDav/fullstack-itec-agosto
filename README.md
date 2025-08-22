@@ -20,6 +20,8 @@
 
 3. **Tipos de Datos**: [Enlace](./temas/03-TiposDatosPrimitivos.md)
 
+4. **Use Strict**: [Enlace](./temas/04-UseStrict.md)
+
 #### Clases Grabadas
 
 * Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)
