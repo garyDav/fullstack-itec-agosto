@@ -38,3 +38,5 @@
 
 * [Aprende CSS Grid Layout Jugando](https://cssgridgarden.com/#es)
 
+* [Talk by Gary Bernhardt from CodeMash 2012](https://www.destroyallsoftware.com/talks/wat)
+
