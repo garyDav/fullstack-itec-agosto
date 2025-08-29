@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# Mongo Data
+mongo_data
+
 # production
 /build
 

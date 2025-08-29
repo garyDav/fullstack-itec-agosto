@@ -1,0 +1,11 @@
+use('itec')
+
+db.estudiantes.insertOne({
+  _id: 1,
+  nombre: "Jhon Alberto"
+})
+
+db.estudiantes.insertOne({
+  _id: 2,
+  nombre: "Lucia Martinez"
+})

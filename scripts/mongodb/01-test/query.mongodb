@@ -1,0 +1,5 @@
+use('local')
+
+// db.[coleccion].[función]
+
+db.usuarios.findOne({name:"Gary"})
