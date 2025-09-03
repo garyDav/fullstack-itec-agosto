@@ -1,0 +1,39 @@
+use("sample_training")
+
+// $set
+db.zips.updateMany(
+  // query
+  { city: "ALPINE" },
+  // update - operators
+  {
+    $set: {
+      mi_atributo: 'hola mundo!!!'
+    }
+  }
+)
+
+use("sample_training")
+// $rename
+db.zips.updateMany(
+  // query
+  { city: "ALPINE" },
+  // update - operators
+  {
+    $rename: {
+      mi_atributo: 'miAtributo'
+    }
+  }
+)
+
+use("sample_training")
+// $unset
+db.zips.updateMany(
+  // query
+  { city: "ALPINE" },
+  // update - operators
+  {
+    $unset: {
+      miAtributo: ''
+    }
+  }
+)

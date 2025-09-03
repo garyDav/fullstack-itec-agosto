@@ -1,0 +1,4 @@
+use("sample_training")
+
+db.zips.find({ city: 'ALPINE' }) // .count()
+

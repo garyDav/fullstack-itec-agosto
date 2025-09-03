@@ -1,0 +1,18 @@
+use('itec')
+
+db.iot.updateOne(
+  // query
+  { sensor: 'A001', date: "2022-01-03" },
+  // update - operators
+  {
+    $push: {
+      readings: 123
+    }
+  },
+  // Optional
+  {
+    upsert: true
+  }
+)
+
+db.iot.find()

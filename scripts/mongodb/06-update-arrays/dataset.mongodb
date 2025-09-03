@@ -1,0 +1,23 @@
+use("itec")
+
+db.inventario.drop()
+
+db.inventario.insertMany([
+  { _id: 1, book: { title: 'Cien años de soledad', author: 'Gabriel García Márquez', genre: 'Novela', isbn: '9780307474728' }, price: 120, stock: 8, tags: ['ficción', 'latinoamericana'] },
+  { _id: 2, book: { title: 'El Principito', author: 'Antoine de Saint-Exupéry', genre: 'Fábula', isbn: '9780156013987' }, price: 85, stock: 15, tags: ['infantil', 'clásico'] },
+  { _id: 3, book: { title: '1984', author: 'George Orwell', genre: 'Distopía', isbn: '9780451524935' }, price: 110, stock: 5, tags: ['ficción', 'política'] },
+  { _id: 4, book: { title: 'Sapiens', author: 'Yuval Noah Harari', genre: 'Historia', isbn: '9780062316097' }, price: 150, stock: 12, tags: ['ensayo', 'ciencia'] },
+  { _id: 5, book: { title: 'La Odisea', author: 'Homero', genre: 'Épica', isbn: '9780140268867' }, price: 95, stock: 7, tags: ['clásico', 'aventura'] },
+  { _id: 6, book: { title: 'Rayuela', author: 'Julio Cortázar', genre: 'Novela', isbn: '9788437604947' }, price: 130, stock: 6, tags: ['experimental', 'latinoamericana'] },
+  { _id: 7, book: { title: 'El código Da Vinci', author: 'Dan Brown', genre: 'Thriller', isbn: '9780307474278' }, price: 100, stock: 10, tags: ['misterio', 'ficción'] },
+  { _id: 8, book: { title: 'Orgullo y prejuicio', author: 'Jane Austen', genre: 'Romance', isbn: '9780141439518' }, price: 90, stock: 9, tags: ['clásico', 'romántico'] },
+  { _id: 9, book: { title: 'Los juegos del hambre', author: 'Suzanne Collins', genre: 'Juvenil', isbn: '9780439023481' }, price: 105, stock: 14, tags: ['aventura', 'distopía'] },
+  { _id: 10, book: { title: 'Fahrenheit 451', author: 'Ray Bradbury', genre: 'Ciencia ficción', isbn: '9781451673319' }, price: 115, stock: 11, tags: ['distopía', 'clásico'] },
+  { _id: 11, book: { title: 'Don Quijote de la Mancha', author: 'Miguel de Cervantes', genre: 'Novela', isbn: '9788491050290' }, price: 140, stock: 4, tags: ['clásico', 'español'] },
+  { _id: 12, book: { title: 'La sombra del viento', author: 'Carlos Ruiz Zafón', genre: 'Misterio', isbn: '9788408172170' }, price: 125, stock: 13, tags: ['ficción', 'suspenso'] },
+  { _id: 13, book: { title: 'Harry Potter y la piedra filosofal', author: 'J.K. Rowling', genre: 'Fantasía', isbn: '9788478884452' }, price: 95, stock: 20, tags: ['juvenil', 'magia'] },
+  { _id: 14, book: { title: 'El alquimista', author: 'Paulo Coelho', genre: 'Inspiración', isbn: '9780061122415' }, price: 100, stock: 16, tags: ['filosofía', 'ficción'] },
+  { _id: 15, book: { title: 'Crónica de una muerte anunciada', author: 'Gabriel García Márquez', genre: 'Novela', isbn: '9780307387356' }, price: 110, stock: 6, tags: ['latinoamericana', 'ficción'] }
+])
+
+db.inventario.find()

@@ -1,0 +1,15 @@
+use("itec")
+
+db.inventario.updateOne(
+  // query
+  { _id: 5 },
+  // update - operators
+  {
+    // $operador: {
+    //  propiedad: valor
+    //}
+    $push: {
+      tags: "ficción"
+    }
+  }
+)

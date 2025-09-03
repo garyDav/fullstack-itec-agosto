@@ -1,0 +1,41 @@
+use("itec")
+
+// eliminar un elemento de un array
+db.inventario.updateOne(
+  // query
+  { _id: 5 },
+  // update - operators
+  {
+    $pull: {
+      tags: "clásico"
+    }
+  }
+)
+
+// eliminar un elemento de un array
+db.inventario.updateMany(
+  // query
+  {},
+  // update - operators
+  {
+    $pull: {
+      tags: "clásico"
+    }
+  }
+)
+
+use("itec")
+// eliminar un elemento de un array
+db.inventario.updateMany(
+  // query
+  {},
+  // update - operators
+  // Operadores anidados
+  {
+    $pull: {
+      tags: {
+        $in: ['aventura', 'experimental']
+      }
+    }
+  }
+)
