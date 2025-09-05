@@ -137,11 +137,11 @@ El resultado es un diseño de bases de datos estructurado que optimiza rendimien
 
 ![Modelamiento](../img/15-modelamiento.png)
 
-#### Workload: ![Documento workload](./06-Workload.md)
+#### Workload: [Documento workload](./06-Workload.md)
 
 En el desarrollo de sistemas de datos, entender y aplicar los conceptos de workload es esencial para modelar adecuadamente la base de datos. En este contenido, exploraremos un caso de estudio de sensores climáticos, centrándonos en la estructura necesaria para identificar los requerimientos correctos y obtener un diseño óptimo.
 
-![Sensores](./16-Sensores.md)
+![Sensores](../img/16-Sensores.png)
 
 ### ¿Cuáles son los tipos de relaciones en bases de datos?
 
