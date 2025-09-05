@@ -26,7 +26,7 @@ Otra característica muy especial de MongoDB es que podemos desarrollar nuestro 
 
 La flexibilidad de Mongo nos permite hacer esto de forma dinámica haciendo uso de unos determinados patrones, mientras que otro tipo de base de datos como lo son las relacionales o tabulares tendríamos que correr todo un proceso de migraciones si deseamos modificar a nivel de estructura nuestra base de datos.
 
-![Documentos en mongoDB](../img/04-documento-mongodb.png)
+![Objetos y Documentos](../img/04-documento-mongodb.png)
 
 Mongo forma parte de la familia de bases de datos documentales y se ha posicionado como una herramienta clave en el ámbito del almacenamiento y gestión de datos. La principal característica de Mongo es su capacidad para organizar la información de manera legible a través de JSON, un estándar que permite representar datos en pares clave-valor, haciendo que sea natural trabajar con documentos estructurados. Aunque internamente usa BSON, un formato binario optimizado para eficiencia, todas las interacciones externas se realizan mediante JSON, facilitando la lectura y manipulación de datos.
 
@@ -34,7 +34,7 @@ Mongo forma parte de la familia de bases de datos documentales y se ha posiciona
 
 Mongo no solo destaca por su estructura de datos innovadora, sino también por cómo se almacenan los documentos en colecciones. Esto permite agrupar datos relacionados de manera intuitiva.
 
-![Documentos en mongoDB](../img/06-colecciones-mongodb.png)
+![Colecciones MonogDB](../img/06-colecciones-mongodb.png)
 
 Por ejemplo, una "colección de usuarios" almacenaría los perfiles de los usuarios, mientras que una "colección de productos" contendría los detalles relevantes de cada producto.
 
@@ -42,17 +42,17 @@ Por ejemplo, una "colección de usuarios" almacenaría los perfiles de los usuar
 
 El diagrama entidad-relación (ERD, por sus siglas en inglés) es una herramienta esencial para modelar, visualizar y comprender cómo se interrelacionan los datos en una base de datos. Al utilizar este tipo de diagramas, se identifican claramente las entidades, atributos y las conexiones entre ellas. Esto se representa con cajas donde se listan los detalles de cada entidad con sus respectivos tipos de datos como ObjectId, fechas o strings.
 
-![Documentos en mongoDB](../img/07-diagrama-ER.png)
+![Diagrama Entidad Relacion](../img/07-diagrama-ER.png)
 
 También lo podemos representar de la siguiente manera:
 
-![Documentos en mongoDB](../img/08-diagrama-ER-tabla.png)
+![ERD Tabla](../img/08-diagrama-ER-tabla.png)
 
 ### Tipos de relaciones en el ERD
 
 Las líneas que conectan las entidades en el diagrama representan las relaciones.
 
-![Documentos en mongoDB](../img/09-relaciones-cardinalidades.png)
+![Relaciones Cardinalidades](../img/09-relaciones-cardinalidades.png)
 
 Estas relaciones pueden ser de:
 
@@ -79,7 +79,7 @@ A medida que avanzamos, veremos cómo cada metodología se adapta a diferentes n
 
 Para obtener un modelamiento de datos efectivo, es indispensable seguir una metodología bien estructurada. Esta aborda patrones y arquitectura tanto para bases de datos relacionales como NoSQL. La importancia de estas estrategias radica en adaptarse a restricciones de sistemas, optimizando recursos y rendimiento.
 
-![Documentos en mongoDB](../img/10-recursos.png)
+![Recurso aire](../img/10-recursos.png)
 
 ### ¿Cuáles son las restricciones comunes en los sistemas de datos?
 
@@ -91,7 +91,7 @@ Las restricciones en un sistema son fundamentales al modelar datos. Se presentan
 
 - **Latencia**: Influye en dónde se almacena la base de datos para minimizar el tiempo de espera de los usuarios, utilizando redes de entrega de contenido (CDN).
 
-![Documentos en mongoDB](../img/11-recursos-mongodb.png)
+![Recursos MongoDB](../img/11-recursos-mongodb.png)
 
 ### ¿Cómo afecta la latencia al acceso de datos?
 
@@ -117,24 +117,119 @@ El "workload" o carga de trabajo es un documento que se genera a partir de la in
 
 Una vez definidos los escenarios y construida la carga de trabajo, queda considerar las relaciones y seguir los patrones adecuados para garantizar un sistema eficiente.
 
-![Documentos en mongoDB](../img/12-workload.png)
+![Workload](../img/12-workload.png)
 
 ### ¿Cómo determinar las relaciones adecuadas entre datos?
 
 Las relaciones se basan en las restricciones identificadas por el experto en modelado. Es vital definir entidades y atributos, además de decidir si se referencian o se embeben las relaciones en bases de datos NoSQL.
 
-![Documentos en mongoDB](../img/13-relaciones.png)
+![Relaciones](../img/13-relaciones.png)
 
 ### ¿Cuán importante es aplicar patrones en el modelamiento?
 
 Los patrones son útiles para mejorar el rendimiento y adecuar el sistema a necesidades específicas. Aunque son opcionales, aplicarlos puede llevar a bases de datos más rápidas y eficaces.
 
-![Documentos en mongoDB](../img/14-patrones.png)
+![Patrones](../img/14-patrones.png)
 
 ### ¿Qué resultado final se busca al aplicar esta metodología?
 
 El resultado es un diseño de bases de datos estructurado que optimiza rendimiento, escalabilidad y costo. Esto asegura que la aplicación funcione de manera eficiente y se adapte a las necesidades futuras del negocio.
 
-![Documentos en mongoDB](../img/15-modelamiento.png)
+![Modelamiento](../img/15-modelamiento.png)
 
-#### Workload: [documento workload](./06-Workload.md)
+#### Workload: ![Documento workload](./06-Workload.md)
+
+En el desarrollo de sistemas de datos, entender y aplicar los conceptos de workload es esencial para modelar adecuadamente la base de datos. En este contenido, exploraremos un caso de estudio de sensores climáticos, centrándonos en la estructura necesaria para identificar los requerimientos correctos y obtener un diseño óptimo.
+
+![Sensores](./16-Sensores.md)
+
+### ¿Cuáles son los tipos de relaciones en bases de datos?
+
+Las bases de datos, ya sean relacionales o no, manejan tres tipos básicos de relaciones:
+
+- **One to One (1:1)**: Una entidad está asociada a otra entidad única. Ejemplo clásico: un usuario y su credencial única.
+
+- **One to Many (1:N)**: Una entidad está relacionada con muchas otras. Por ejemplo, un usuario puede poseer varios libros.
+
+- **Many to Many (N:N)**: Varias entidades están relacionadas con múltiples entidades. Un claro ejemplo es un autor que ha escrito múltiples libros y un libro que puede tener varios autores.
+
+![Tipos Relaciones](../img/17-tipos-relaciones.png)
+
+Ejemplo:
+
+![Ejemplo Librería](../img/18-ej-libreria.png)
+
+Otro Ejemplo:
+
+![Ejemplo Ecommerce](../img/19-ej-ecomerce.png)
+
+### ¿Cómo se expresan estas relaciones en bases de datos documentales?
+
+En bases de datos documentales como MongoDB, las relaciones se pueden expresar de dos maneras: embebidas o referenciadas.
+
+#### ¿Qué significa embeber documentos?
+
+Embeber documentos implica incluir un subdocumento dentro de otro documento. Esto es útil cuando se desea simplificar el acceso y cuando las relaciones son intrínsecamente cercanas. Por ejemplo:
+
+```json
+{
+  "usuario": {
+    "nombre": "Juan Pérez",
+    "contacto": {
+      "email": "juan@example.com",
+      "telefono": "123456789"
+    }
+  }
+}
+```
+
+En este caso, el contacto del usuario está embebido dentro del documento del usuario, representando una relación uno a uno.
+
+![Relación embebida](../img/20-embebido.png)
+
+### ¿Cuándo es preferible utilizar la referencia?
+
+Referenciar documentos significa mantener los documentos separados, utilizando un campo para conectar entre ellos. Es benéfico cuando los datos cambian con frecuencia o cuando se requiere acceder a los componentes individualmente. Un ejemplo básico sería tener documentos de usuario y contacto por separado, utilizándose un ID para referenciarlos:
+
+```json
+// Documento de usuario
+{
+  "id": "1",
+  "nombre": "Juan Pérez"
+}
+
+// Documento de contacto
+{
+  "usuarioId": "1",
+  "email": "juan@example.com",
+  "telefono": "123456789"
+}
+```
+
+Aquí, la referencia a través de `usuarioId` en el documento de contacto conecta ambos documentos indicándonos que pertenecen al mismo usuario.
+
+![Relación referencial](../img/21-referencial.png)
+
+Diagrama relación embebida.
+
+![Diagrama Embebido](../img/22-diagrama-embebido.png)
+
+### ¿Cómo decidir entre embeber o referenciar?
+
+Existen tres preguntas claves que deben guiar tu decisión:
+
+1. **Frecuencia de consulta**: ¿Con qué frecuencia se consulta esa información? Si la respuesta es frecuentemente, es probable que sea beneficioso embebir los documentos.
+
+2. **Frecuencia de actualización**: ¿Con qué frecuencia se actualiza la información? Un alto ritmo de cambio favorece el uso de referencias, ya que se evita reestructurar conjuntos de datos embebidos.
+
+3. **Consulta conjunta o separada**: ¿La información se consulta en conjunto o de manera aislada? Si los datos se suelen necesitar conjuntamente, consideraría embebirlos; de lo contrario, referencia puede ser una mejor opción.
+
+### ¿Cómo se representan estas relaciones visualmente?
+
+Para las bases de datos documentales, la visualización de las relaciones es fundamental. En un diagrama entidad-relación, una entidad embebida podría representarse directamente dentro de otra. Por el contrario, los documentos referenciados se conectan a través de líneas indicando la relación.
+
+Adoptar este enfoque flexible te permitirá optar por la mejor estrategia para cada tipo de relación considerando tus necesidades específicas. Las bases de datos documentales como MongoDB ofrecen esta dualidad de modos de relación, permitiendo elegir la opción más eficaz según el contexto y requerimientos de tus datos.
+
+![Auto Desarmado](../img/23-auto-desarmado.png)
+
+![Auto Armado](../img/24-auto-armado.png)
