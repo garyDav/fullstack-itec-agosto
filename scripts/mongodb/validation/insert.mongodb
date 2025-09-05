@@ -1,0 +1,14 @@
+use('itec')
+
+db.users.insertOne({
+  email: 'admin@gmail.com',
+  password: '123456',
+  name: 'Gary',
+  lastname: 'Guzman',
+  address: {
+    street: 'Junin',
+    zone: 'Central',
+    num: 150,
+  },
+  roles: ['admin', 'customer']
+})

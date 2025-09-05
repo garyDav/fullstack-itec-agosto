@@ -1,0 +1,59 @@
+use('itec')
+
+db.users.drop()
+db.createCollection('users', {
+  validator: {
+    $jsonSchema: {
+      bsonType: 'object',
+      required: ['email', 'password'],
+      properties: {
+        email: {
+          bsonType: 'string',
+          minLength: 5,
+          description: "'name' must be a string and is required and min 5 character"
+        },
+        password: {
+          bsonType: 'string',
+          pattern: '^[A-Za-z0-9]{6,}$'
+        },
+        name: {
+          bsonType: 'string',
+        },
+        lastname: {
+          bsonType: 'string',
+        },
+        isSingle: {
+          bsonType: 'bool'
+        },
+        age: {
+          bsonType: 'number',
+          minimum: 18,
+          maximum: 99,
+        },
+        address: {
+          bsonType: 'object',
+          required: ['street'],
+          properties: {
+            street: {
+              bsonType: 'string',
+            },
+            zone: {
+              bsonType: 'string',
+            },
+            num: {
+              bsonType: 'number',
+            }
+          }
+        },
+        roles: {
+          bsonType: 'array',
+          minItems: 1,
+          uniqueItems: true,
+          items: {
+            bsonType: 'string'
+          }
+        }
+      }
+    }
+  }
+})

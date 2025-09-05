@@ -1,0 +1,3 @@
+use('itec')
+
+db.users.find()
