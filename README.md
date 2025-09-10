@@ -24,6 +24,10 @@
 
 5. **MongoDB**: [Enlace](./temas/05-MongoDB.md)
 
+6. **Workload**: [Enlace](./temas/06-Workload.md)
+
+7. **Relaciones**: [Enlace](./temas/07-Relaciones.md)
+
 #### Clases Grabadas
 
 * Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)

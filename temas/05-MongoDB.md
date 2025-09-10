@@ -218,11 +218,11 @@ Diagrama relación embebida.
 
 Existen tres preguntas claves que deben guiar tu decisión:
 
-1. **Frecuencia de consulta**: ¿Con qué frecuencia se consulta esa información? Si la respuesta es frecuentemente, es probable que sea beneficioso embebir los documentos.
+1. **Frecuencia de consulta**: ¿Con qué frecuencia se consulta esa información? Si la respuesta es frecuentemente, es probable que sea beneficioso embeber los documentos.
 
 2. **Frecuencia de actualización**: ¿Con qué frecuencia se actualiza la información? Un alto ritmo de cambio favorece el uso de referencias, ya que se evita reestructurar conjuntos de datos embebidos.
 
-3. **Consulta conjunta o separada**: ¿La información se consulta en conjunto o de manera aislada? Si los datos se suelen necesitar conjuntamente, consideraría embebirlos; de lo contrario, referencia puede ser una mejor opción.
+3. **Consulta conjunta o separada**: ¿La información se consulta en conjunto o de manera aislada? Si los datos se suelen necesitar conjuntamente, consideraría embeberlos; de lo contrario, referencia puede ser una mejor opción.
 
 ### ¿Cómo se representan estas relaciones visualmente?
 
