@@ -307,7 +307,7 @@ Usa referencias cuando:
 ## ⚠️ Consideraciones
 
 - Las referencias requieren **consultas adicionales o agregaciones** para unir datos.
-- Es importante **indexar correctamente** los campos referenciados para mantener el rendimiento.
+- Es importante **indexar correctamente** los campos referenciados para mantener consistencia en la base de datos.
 - Evita referenciar si los datos son pequeños, dependientes y siempre se consultan juntos.
 
 ---
@@ -322,7 +322,7 @@ Las relaciones muchos a muchos permiten conectar **varios elementos de una colec
 
 ## 🔗 ¿Por qué usar referencias?
 
-Las relaciones muchos a muchos **no deben embebirse**, ya que:
+Las relaciones muchos a muchos **no deben embeberse**, ya que:
 
 - Limitan la flexibilidad.
 - Impiden que ambas entidades se refieran mutuamente.
@@ -360,6 +360,7 @@ Las relaciones muchos a muchos **no deben embebirse**, ya que:
     "productsIDs": [
       ObjectId("5f50c31aa06a6b3f79138c51"),
       ObjectId("5f50c31aa06a6b3f79138c52")
+      ObjectId("5f50c31aa06a6b3f79138c49"),
     ]
   }
 ]
@@ -385,6 +386,23 @@ db.stores.aggregate([
 ```
 
 📊 Resultado: Cada tienda incluirá un array `productos` con los detalles completos de cada producto.
+
+```js
+[
+  {
+    nombre: "Store1",
+    productsIDs: [
+      ObjectId("5f50c31aa06a6b3f79138c49"),
+      ObjectId("5f50c31aa06a6b3f79138c50")
+    ],
+    productos: [
+      { _id: ObjectId("5f50c31aa06a6b3f79138c49"), nombre: "Producto 1", tamaño: ["L", "M"], precio: 30 },
+      { _id: ObjectId("5f50c31aa06a6b3f79138c50"), nombre: "Producto 2", tamaño: ["L"], precio: 45 },
+    ]
+  },
+  ...
+]
+```
 
 ## 🎯 Escenarios reales
 

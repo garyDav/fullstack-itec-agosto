@@ -28,6 +28,8 @@
 
 7. **Relaciones**: [Enlace](./temas/07-Relaciones.md)
 
+8. **Computted Pattern**: [Enlace](./temas/08-ComputedPattern.md)
+
 #### Clases Grabadas
 
 * Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)
