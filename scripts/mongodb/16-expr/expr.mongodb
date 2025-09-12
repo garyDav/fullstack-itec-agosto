@@ -1,0 +1,10 @@
+use("itec")
+
+// db.monthlyBudget.find({ spent: {$gte: 100} })
+
+db.monthlyBudget.find({
+  $expr: { // Agregacion entre propiedades del mismo documento
+    $gte: ["$spent", "$budget"]
+  }
+})
+

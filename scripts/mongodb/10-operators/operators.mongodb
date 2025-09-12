@@ -1,0 +1,16 @@
+use('itec')
+
+// Using $gt (>) & $gte (>=) "Greater than"
+// db.inventory.find({ qty: { $gt: 20 } })
+// db.inventory.find({ qty: { $gte: 20 } }).count()
+
+// Using $lt (<) & $lte (<=) "less than"
+// db.inventory.find({ qty: { $lt: 20 } })
+// db.inventory.find({ qty: { $lte: 20 } })
+
+// Join
+// db.inventory.find({ qty: { $gte: 25, $lte: 35 } })
+db.inventory.find({
+  "item.code": { $ne: "123" },
+  qty: { $gte: 20, $lte: 25 }
+})

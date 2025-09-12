@@ -1,0 +1,4 @@
+use("itec")
+
+db.survey.find()
+

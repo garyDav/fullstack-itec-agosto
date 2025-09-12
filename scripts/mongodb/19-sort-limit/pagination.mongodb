@@ -1,0 +1,7 @@
+use("itec")
+
+db.categories
+  .find()
+  .skip(9)
+  .limit(3)
+

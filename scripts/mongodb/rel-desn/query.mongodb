@@ -1,0 +1,4 @@
+use("itec")
+
+db.products.find()
+db.orders.findOne({_id: ObjectId('63505abdf9eb09eb2a5faace')})

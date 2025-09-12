@@ -1,5 +1,6 @@
 use('itec')
 
+db.users.drop()
 db.users.insertOne({
   email: 'admin@gmail.com',
   password: '123456',

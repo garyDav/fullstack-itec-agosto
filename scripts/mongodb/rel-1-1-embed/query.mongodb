@@ -1,0 +1,5 @@
+use("itec")
+
+db.users.find({
+    "address.city": "Bogota"
+})

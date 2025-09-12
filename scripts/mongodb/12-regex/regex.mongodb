@@ -1,0 +1,9 @@
+use("itec")
+
+// db.inventory.find({ "item.description": "Single line description." }) // exactamente igual
+// db.inventory.find({ "item.description": { $regex: /line/ } }) // contenga la palabra "line"
+// db.inventory.find({ "item.description": { $regex: /LiNe/i } }) // insensible a mayúsculas
+// db.inventory.find({ "item.description": { $regex: /line$/i } }) // termina con "line"
+// db.inventory.find({ "item.description": { $regex: /^single/i } }) // comienza con "single"
+db.inventory.find({ "item.description": { $regex: /^s/im } }) // La opción `m` activa el modo multilinea (`\n`)
+
