@@ -8,7 +8,7 @@
 
 * [Next.js Docs](https://nextjs.org/docs)
 
-#### Requisitos previos
+#### Configurar Ubuntu (Opcional)
 
 Para seguir este tutorial en caso de trabajar con Ubuntu, necesitará lo siguiente:
 
@@ -18,7 +18,7 @@ Para seguir este tutorial en caso de trabajar con Ubuntu, necesitará lo siguien
 
 - Docker Compose instalado en su servidor conforme el paso 1 de [How To Install and Use Docker Compose on Ubuntu 22.04](https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-22-04).
 
-- Una Alternativa a S.O. Linux se utilizará WSL2 con Windows 11 Pro, es lo que utilizaré en el resumen.
+- Una Alternativa a S.O. Linux se utilizará WSL2 con Windows 11 Pro, es lo que utilizaré en el curso.
 
 #### Conocimientos previos
 
@@ -95,7 +95,7 @@ Next.js cambia el paradigma de los **SPA** (Single Page Application), y te da op
 
 3. Ahí es donde el cliente recibe esa solicitud, ésta tiene la información de diferentes dependencias que vamos a ocupar, los estilos hay que cargarlos de este URL, etc. Usualmente viene un documento **HTML** con todas sus referencias, que son necesarias para mostrar la aplicacion como nosotros queremos.
 
-4. Si estamos trabajando con un SPA, todo el sitio web o la mayor parte de él. La computadora cliente (Navegador) interpreta la respuesta y aquí viene nuestro contenido de React.js, React empieza a generar la aplicación, empieza a usar el `useState`, los `useEffect`, los `useLayoutEffect`, el `useReducer`, crea el `context`, ahí empieza a generar toda esa parte, esto no es malo es sumamente poderos y útil que podamos crear **SPA**. Especialmente si son aplicaciones que están en la intranet, aplicaiones que no importa que sean **SEO friendly**.
+4. Si estamos trabajando con un SPA, todo el sitio web o la mayor parte de él. La computadora cliente (Navegador) interpreta la respuesta y aquí viene nuestro contenido de React.js, React empieza a generar la aplicación, empieza a usar el `useState`, los `useEffect`, los `useLayoutEffect`, el `useReducer`, crea el `context`, ahí empieza a generar toda esa parte, esto no es malo es sumamente poderos y útil que podamos crear **SPA**. Especialmente si son aplicaciones que están en la intranet, aplicaciones que no importa que sean **SEO friendly**.
 
 **¿Qué pasaría si una persona (Cliente) sólo quiere ver el `About` de nuestro sitio web?**, entonces cargaría absolumamente todo, cargaría completamente toda la aplicación y eso implica módulos que posiblemente nunca usará, pero quizá lo peor de todo es que el **SPA no** es **SEO friendly**, los SPA tienen SEO, pero sólo en una pantalla, por que es la única página que se está generando, se puede hacer difierentes alteraciones, y el equipo de Google dijo que pronto los bots puedan renderizar la aplicación en memoria para así analizar meta tags y otra información, por el momento los SPA son conciderados no SEO friendly.
 
@@ -169,7 +169,7 @@ El archivo `./pages/_app.js` es un archivo común que comparte todas las página
 
 **`tailwind.config.js:`** luego tenemos en archivo de configuración de Tailwind CSS.
 
-**`Readme.md:`** Podemos establecer la descripción de la aplicación, añadiendo procedimientos de como levantar y como construir su aplicción.
+**`Readme.md:`** Podemos establecer la descripción de la aplicación, añadiendo procedimientos de como levantar y como construir su aplicación.
 
 **`postcss.config.js:`** Como establecimos trabajar con Tailwind CSS, es necesario este archivo, en este archivo no tiene nada que ver Next.js.
 
