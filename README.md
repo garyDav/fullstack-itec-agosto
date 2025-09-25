@@ -52,3 +52,19 @@
 
 * [Talk by Gary Bernhardt from CodeMash 2012](https://www.destroyallsoftware.com/talks/wat)
 
+#### FrontEnd
+
+* [Creative Tim](https://www.creative-tim.com/ "creative-tim.com")
+
+* [Next Image](https://nextjs.org/docs/app/api-reference/components/image "Doc. Next Image")
+
+* [React Icons](https://react-icons.github.io/react-icons/icons/io5/ "react-icons.github.io")
+
+* [Fetching Data](https://nextjs.org/docs/app/getting-started/fetching-data "Doc. Next Feching Data")
+
+* [Pokemon API](https://pokeapi.co/ "API")
+
+* [Quicktype](https://quicktype.io/ "Convert JSON to typesafe")
+
+* [Tailwind Card](https://www.creative-tim.com/twcomponents/component/user-card-7 "TW component Card")
+
