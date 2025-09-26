@@ -558,7 +558,98 @@ function mostrarMensaje(tipoError) {
 > ❗ Utilizaremos `const enum ...` siempre que sea posible.<br />
 > ❗ Utilizaremos solo `enum ...` cuando la funcionalidad se consume desde afuera o estemos realizando una librería.
 
+---
+
 Utilizaremos **Aserciones de tipos**.
+
+Imaginemos que estamos trabajando con `canvas` y `typescript`.
+
+```ts
+const canvas = document.getElementById('canvas')
+
+// ¿Cómo sabe TypeSCript que realmente estas recuperando un elemento <canvas />?
+
+if (canvas !== null) {
+  const ctx = canvas.getContext('2d') // Se queja por `getContext` no existe en HTMLElement
+  // Pero necesitamos un tipo más específico: HTMLCanvasElement
+}
+```
+
+Para decirle que este elemento lo trate como `HTMLCanvasElement`:
+
+```ts
+// Básicamente le estamos diciendo a `TypeScript` que se fie de nosotros
+const canvas = document.getElementById('canvas') as HTMLCanvasElement
+
+if (canvas !== null) {
+  const ctx = canvas.getContext('2d')
+}
+```
+
+Lo mejor que podríamos hacer, es que la aserción lo hagamos despues de la comprobación.
+
+```ts
+// Aún así si mandamos otro elemento que no sea canvas TypeScript no se daría cuenta.
+const canvas = document.getElementById('canvas')
+
+if (canvas !== null) {
+  const ctx = (canvas as HTMLCanvasElement).getContext('2d')
+}
+```
+
+Lo que se puede hacer es comprobar si ese elemento es igual que un `HTMLCanvasElement`.
+
+```js
+// Esto es JavaScript pero en TypeScript usa la inferencia para darse cuenta.
+const canvas = document.querySelector('canvas')
+
+if (canvas instanceof HTMLCanvasElement) {
+  const ctx = canvas.getContext('2d')
+}
+```
+
+Vamos a codi.link y probamos.
+
+`Fetching` de datos en TypeScript.
+
+```mts
+// Usar .mts para nodejs
+const API_URL = 'https://api.github.com/search/repositories?q=javasript'
+
+const response = await fecth(API_URL)
+
+if (!response.ok) {
+  throw new Error('Request failed')
+}
+
+// Aquí TypeScript no tiene ni idea que tipo de datos sería
+// Para esto se utiliza las aserciones
+const data = await response.json()
+```
+
+Ingresamos a https://quicktype.io/ pegamos la respuesta de la API y obtenemos los tipos checkamos: `Interfaces only`, `Verify JSON.parse results at runtime`, `Use types instead of interfaces`.
+
+```mts
+export type GitHubAPIResponse = {
+  items: []
+  ...
+}
+// ...
+
+const API_URL = 'https://api.github.com/search/repositories?q=javasript'
+
+const response = await fecth(API_URL)
+
+if (!response.ok) {
+  throw new Error('Request failed')
+}
+
+const data = await response.json() as GitHubAPIResponse
+data.items.// aparece todos los tipos.
+```
+
+
+
 
 
 
