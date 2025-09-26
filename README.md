@@ -32,6 +32,10 @@
 
 9. **Introducción NEXT.js** [Enlace](./temas/09-NextJS.md)
 
+10. **Documentación PNPM** [Enlace](./temas/10-doc-pnpm.md)
+
+11. **Typescript** [Enlace](./temas/11-typescript.md)
+
 #### Clases Grabadas
 
 * Clases Grabadas: [Drive](https://drive.google.com/drive/folders/1Zd6SKK8sqIUPw2qt7WhXnL4uMADqsU4I?usp=sharing)
