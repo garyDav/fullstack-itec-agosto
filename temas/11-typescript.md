@@ -648,7 +648,270 @@ const data = await response.json() as GitHubAPIResponse
 data.items.// aparece todos los tipos.
 ```
 
+Para realizar validaciones y detectar los tipos en tiempo de ejecución podríamos habilitar `TypeScript Zod`, esto sí genera código en tiempo de ejecución.
 
+---
+
+Hay otra forma de definir tipos y es con `interface`, es muy similar al `type`, diría que mas del `95%` podrían ser intercambiables.
+
+```ts
+type heroe = {
+  id: string
+  name: string
+  age: number
+}
+
+interface heroe {
+  id: string
+  name: string
+  age: number
+}
+```
+
+Tiene ligerias diferencias, define la forma que debe tener un objeto, sería cómo definir el contrato de un objeto para especificar sus propiedades y métodos.
+
+Se puede añadir que tenga métodos:
+
+```ts
+interface heroe {
+  id: string
+  name: string
+  age: number
+
+  saludar: () => void
+}
+```
+
+Lo interesante es que en las interfaces se pueden anidar.
+
+```ts
+interface Producto {
+  id: number
+  nombre: string
+  precio: number
+  quantity: number
+}
+
+// Algo propio de las `interface` se puede extender con `extends`
+interface Zapatilla extends Producto {
+  talla: number
+}
+
+interface CarritoDeCompras {
+  totalPrice: number
+  productos: (Producto | Zapatilla)[] // Se puede utilizar union types con las interfaces
+}
+
+const carrito: CarritoDeCompras = {
+  totalPrice: 100,
+  productos: [
+    {
+      id: 1,
+      nombre: 'Producto 1',
+      precio: 100,
+      quantity: 1
+    }
+  ]
+}
+```
+
+Hay dos formas de tipar métodos con interfaces.
+
+```ts
+// Opción 1
+interface CarritoOps {
+  add: (product: Producto) => void,
+  remove: (id: number) => void,
+  clear: () => void,
+}
+
+// Opción 2
+interface CarritoOps {
+  add(product: Product): void
+  remove(id: number): void
+  clear(): void
+}
+```
+
+Algo que podemos hacer con las interfaces es reescribir la interfaz y dividir los tipos internos, si lo dejamos así se queja por tener las propiedades repetidas.
+
+```ts
+interface CarritoOps {
+  add: (product: Producto) => void,
+  remove: (id: number) => void,
+}
+
+interface CarritoOps {
+  clear(): void
+}
+
+const ops: CarritoOps = {
+  add: (product: Producto) => {},
+  remove: (id: number) => {},
+  clear: () => {},
+}
+```
+
+¿`Interfaces` o `Types`?
+
+Podemos ver las diferencias de utilizar uno o el otro desde la documentación y apartir de esto escoger cual utilizar.
+
+[Doc. TypeScript - Handbook - EverydayTypes](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+
+Otra diferencia es que las interfaces no pueden declarar tipo primitivo, ej:
+
+```ts
+type HeroId = `${number}-${string}`
+```
+
+Por lo general siempre que puedas usar `type` utilizalos, para objetos o clases utilizaría `interface`.
+
+### Narrowing
+
+```ts
+function mostrarLongitud(objeto: number | string) {
+  if (typeof objeto === 'string') {
+    return objeto.length
+  }
+
+  return objeto.toString().length
+}
+
+mostrarLongitud('1')
+```
+
+```ts
+interface Mario {
+  company: 'Nintendo',
+  nombre: string,
+  saltar: () => void
+}
+
+interface Sonic {
+  company: 'Sega',
+  nombre: string,
+  correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+function jugar(personaje: Personaje) {
+  if (personaje.company === 'Nintendo') {
+    personaje.saltar() // <--- Este es Mario!!
+    return
+  }
+
+  // Seguro que solo llega a sonic
+  personaje.correr()
+}
+```
+
+```ts
+interface Mario {
+  nombre: string,
+  saltar: () => void
+}
+
+interface Sonic {
+  nombre: string,
+  correr: () => void
+}
+
+type Personaje = Mario | Sonic
+
+// Type Guard
+// Déjame comprobar si personaje es sonic
+// y esta función determina si es sonic o no
+function checkIsSonic(personaje: Personaje): personaje is Sonic {
+  return (personaje as Sonic).correr === undefined
+}
+
+function jugar(personaje: Personaje) {
+  if( checkIsSonic(personaje) ) {
+    personaje.correr()
+  }
+}
+```
+
+### Tipo Never
+
+```ts
+function fn(x: string | number) {
+  if (typeof x === 'string') {
+    // x es string
+    x.toUpperCase()
+  } else if (typeof x === 'number') {
+    // do something
+    x.toFixed(2)
+  } else {
+    x // never
+  }
+}
+```
+
+```ts
+class Avenger {
+  readonly name: string
+  // #powerScore: number en todos tendríamos que añadir #
+  private powerScore: number // no puedes acceder a partir de la instancia
+  private readonly wonBattles: number = 0
+  // public age: number = 0
+  // age: number = 0 // por defecto es public
+  protected age: number = 0 // podrías acceder a clases que hereden esta propiedad
+
+  constructor(name: string, powerScore: number) {
+    this.name = name
+    this.powerScore = powerScore
+  }
+
+  get fullName() {
+    return `${this.name}, de poder ${this.powerScore}`
+  }
+
+  set power(newPower: number) {
+    if (newPower <= 100) {
+      this.powerScore = newPower
+    } else {
+      throw new Error('Power score cannot be more than 100')
+    }
+  }
+}
+
+const avengers = new Avenger('Spidey', 80)
+// avengers.name
+```
+
+```ts
+interface Avenger {
+  name: string
+  powerScore: number
+  wonBattles: number
+  age: number
+
+  battle: (enemy: Avenger, win: boolean) => void
+}
+
+class Avenger implements Avenger {
+  constructor(name: string, powerScore: number) {
+    this.name = name
+    this.powerScore = powerScore
+  }
+
+  get fullName() {
+    return `${this.name}, de poder ${this.powerScore}`
+  }
+
+  set power(newPower: number) {
+    if (newPower <= 100) {
+      this.powerScore = newPower
+    } else {
+      throw new Error('Power score cannot be more than 100')
+    }
+  }
+}
+
+const avengers = new Avenger('Spidey', 80)
+```
 
 
 
